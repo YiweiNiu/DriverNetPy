@@ -1,10 +1,14 @@
 # DriverNetPy - A Python implementation of DriverNet.
 
-This repository is a Python implementation of the DriverNet algorithm [^1].
+This repository is a Python implementation of the DriverNet](https://www.bioconductor.org/packages/DriverNet/) algorithm.
 
 ## Motivation
 
-[DriverNet](https://www.bioconductor.org/packages/DriverNet/) [^1] uses an easy-to-understand greedy searching algorithm to prioritize cancer drivers. I like this idea. It is elegant and effective.
+[DriverNet](https://www.bioconductor.org/packages/DriverNet/) uses an easy-to-understand greedy searching algorithm to prioritize cancer drivers. Here is the paper.
+
+> Bashashati A, Haffari G, Ding J, Ha G, Lui K, Rosner J, Huntsman DG, Caldas C, Aparicio SA, Shah SP. 2012. DriverNet: uncovering the impact of somatic driver mutations on transcriptional networks in cancer. Genome Biology. 13:R124. doi:[10.1186/gb-2012-13-12-r124](https://doi.org/10.1186/gb-2012-13-12-r124).
+
+I like this idea. It is elegant and effective.
 
 To better understand it, I decided to write a Python version in case I would use this algorithm in other projects.
 
@@ -99,7 +103,8 @@ write.table(res, file='DriverNet_res.txt', quote=F, sep='\t')
 Run `DriverNetPy` using the example data.
 
 ```shell
-$  python ../DriverNetPy/DriverNet.py -n sampleInfluenceGraph.txt -m samplePatientMutationMatrix.txt -e samplePatientOutlierMatrix.txt
+$ cd test
+$ python ../DriverNetPy/DriverNet.py -n sampleInfluenceGraph.txt -m samplePatientMutationMatrix.txt -e samplePatientOutlierMatrix.txt
 2019-05-15 16:45:13,177 - __main__ - INFO - Start running.
 2019-05-15 16:45:13,177 - __main__ - INFO - Parameters: ../DriverNetPy/DriverNet.py -n sampleInfluenceGraph.txt -m samplePatientMutationMatrix.txt -e samplePatientOutlierMatrix.txt
 2019-05-15 16:45:13,799 - preprocess - INFO - Reading gene-gene interacions done.
@@ -115,6 +120,12 @@ $  python ../DriverNetPy/DriverNet.py -n sampleInfluenceGraph.txt -m samplePatie
 ```
 
 Compare the result of `DriverNetPy` with `DriverNet`.
+
+```shell
+python ../script/compare.py DriverNet_res.txt DriverNetPy_res.txt
+```
+
+
 
 ![compare](test/compare.png)
 
@@ -135,7 +146,7 @@ The network permutation scheme in `DriverNetPy` considers the degree of each nod
 
 ### The version of DriverNet I referred to was 1.0.0
 
-Well, the code of DriverNet_1.0.0 (oldest) and DriverNet 1.24.0 (latest, 20190515) shows no differences.
+Well, the code of DriverNet_1.0.0 (oldest) and DriverNet 1.24.0 (latest, checked in 20190515) shows no differences.
 
 ```shell
 $ wget https://www.bioconductor.org/packages/2.12/bioc/src/contrib/DriverNet_1.0.0.tar.gz
@@ -154,4 +165,4 @@ I would change the forms of input data, e.g. from raw expression data and raw mu
 
 ## Reference
 
-[^1]: Bashashati A, Haffari G, Ding J, Ha G, Lui K, Rosner J, Huntsman DG, Caldas C, Aparicio SA, Shah SP. 2012. DriverNet: uncovering the impact of somatic driver mutations on transcriptional networks in cancer. Genome Biology. 13:R124. doi:[10.1186/gb-2012-13-12-r124](https://doi.org/10.1186/gb-2012-13-12-r124).
+[^1]: 
