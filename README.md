@@ -14,7 +14,7 @@ To better understand it, I decided to write a Python version in case I would use
 
 Also, in reading `DriverNet` paper and its R code. I found  that the R implementation of `DriverNet` has some pitfalls:
 
-* In "finding drivers" step,  mutated gene candidates were updated by genes already covered (`line 72` in `DriverSelection.R` ). This was not mentioned in the paper. I do not know why.
+* In "finding drivers" step,  mutated gene candidates were updated by genes already covered by genes selected (`line 72` in `DriverSelection.R` ). This was not mentioned in the paper. I did not know why.
 * In "significance test" step, the patient-outlier matrix and patient-mutation matrix were shuffled only by gene names (`line 35-38` in `SignificanceTest.R` ), which would keep the number of outliers and mutated genes of each patient unchanged. This is different from the way described in the paper. I think the perturbation described in the paper may be more reasonable.
 
 * In "significance test" step, the random patient-outlier matrix and random patient-mutation matrix  before running `.greedyGeneDriverSelection` were preprocessed by a different way as that used in "finding drivers". I did not know why.
@@ -133,7 +133,7 @@ python ../script/compare.py DriverNet_res.txt DriverNetPy_res.txt
 
 ## Notes
 
-### The result of DriverNetPy show discordance with that of DriverNet
+### The result of DriverNetPy shows discordance with that of DriverNet
 
 This may due to:
 
