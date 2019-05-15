@@ -29,7 +29,7 @@ plt.figure(1)
 plt.subplot(121)
 
 venn2([set(list(DriverNet.keys())), set(list(DriverNetPy.keys()))], set_labels=('DriverNet', 'DriverNetPy'))
-plt.title('Venn plot')
+plt.title('Overlap')
 
 # concordance
 plt.subplot(122)
@@ -43,14 +43,12 @@ for ix, key in enumerate(DriverNetPy.keys()):
 
 plt.plot(concordance_ratio)
 plt.title('Concordance ratio')
-plt.xlabel('Top ranked genes of DriverNet')
-plt.ylabel('Concordance with DriverNetPy')
+plt.xlabel('Top ranked genes of DriverNetPy')
+plt.ylabel('Concordance with DriverNet')
 
 plt.tight_layout()
 plt.savefig('compare.png', dpi = 300)
 plt.clf()
 plt.cla()
 plt.close()
-
-
 
