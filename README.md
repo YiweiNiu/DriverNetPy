@@ -1,6 +1,6 @@
 # DriverNetPy - A Python implementation of DriverNet.
 
-This repository is a Python implementation of the DriverNet](https://www.bioconductor.org/packages/DriverNet/) algorithm.
+This repository is a Python implementation of the [DriverNet](https://www.bioconductor.org/packages/DriverNet/) algorithm.
 
 ## Motivation
 
