@@ -163,6 +163,3 @@ $ for sample in `ls *`; do diff $sample ../../DriverNet_1.0.0/R/${sample}; done
 
 I would change the forms of input data, e.g. from raw expression data and raw mutation data.
 
-## Reference
-
-[^1]: 
